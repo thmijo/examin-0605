@@ -27,7 +27,7 @@ Next Id : {{nextQuestionIndex}}
 </div>
 <button class="btn btn-primary" type="button" *ngIf="!(currentQuestionIndex===0)" (click)="getQuestion(previousQuestionIndex)">Prev</button>
 <button class="btn btn-primary" type="button" *ngIf="!(currentQuestionIndex===3)" (click)="getQuestion(nextQuestionIndex)"> Next</button>
-<button class="btn btn-success" type="button" *ngIf="currentQuestionIndex===3">  Submit </button>
+<button class="btn btn-success" type="submit" *ngIf="currentQuestionIndex===3">  Submit </button>
 </form>
 <!--
  <p *ngFor="let question of questions ; let i = index"> 

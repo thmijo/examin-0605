@@ -62,7 +62,9 @@ export class UserService {
 addUserAttempts(uId:string) {
     const attempt = {
       test : "Test attempt 333",
-      time: new Date()
+      time: new Date(),
+      dArray :  ['hello','Bolo','Maylo','Julo'],
+      dMap : { 'Environments' : 'Bro', 'servers':'Sis'}  
     };
     console.log("adding atempt for "+uId);
    //this.attemptsCollection = this.afs.collection(`users);

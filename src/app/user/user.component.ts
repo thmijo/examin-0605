@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
     console.log("getting attempts for user 111"+uId);
        this.userSerivce.getUserAttempts(uId).subscribe(attempts => {
       this.attempts = attempts;
-      console.log(this.attempts);
+      console.log(this.attempts.length);
     });
   }
 

@@ -44,7 +44,7 @@ getQuestion(i:number) {
     this.nextQuestionIndex = i+1;
     if (this.nextQuestionIndex > this.questions.length-1)
     this.nextQuestionIndex = null;
-   //  this.signupForm.reset();
+     this.signupForm.reset();
    // this.questions[i-1].sel = "!!!!!!!!!!!!!!!!!!!!!!!!!"+this.signupForm.value.Option;
     //this.getQuestion.bind("ans3");
    // console.log(this.questions[this.currentQuestionIndex]);
@@ -64,5 +64,6 @@ getQuestion(i:number) {
     console.log ("form submitted"+this.signupForm.value.one);
     //this.signupForm.reset();
   }
+
 
 }

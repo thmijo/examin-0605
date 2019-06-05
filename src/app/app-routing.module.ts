@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'exams/:eId/questions/:qid' , component: QuestionComponent},
   {path: 'exams/:eId' , component: QuestionPaperComponent},
   {path: 'exams' , component: ExamComponent},
-  {path: 'users' , component: UserComponent}
+  {path: 'users' , component: UserComponent},
 ];
 
 @NgModule({
