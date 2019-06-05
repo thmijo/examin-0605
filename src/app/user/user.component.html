@@ -16,19 +16,20 @@ user works!
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Exam Name</th>
-      <th scope="col">Exam Desc</th>
-      <th scope="col">Exam ID</th>
-      <th scope="col">Link</th>
+      <th scope="col">AttemptId</th>
+      <th scope="col">Attempt Link</th>
     </tr>
   </thead>
   <tbody *ngFor="let attempt of attempts; let i = index">
     <tr>
       <th scope="row">{{i+1}}</th>
-      <td>{{ attempt.test }}</td>
-       <td>{{ attempt.dArray }}</td>
-       <td>{{ attempt.dMap.Environments }}</td>
-       <td>{{ attempt.dMap.servers }}</td>
+      <td>{{ attempt.id }}</td>
+      <td>{{ attempt.attemptDetails }}</td>
+      <p *ngFor="let question of attempt.attemptDetails">
+          {{question.q}} <br/>
+          {{question.ans}} <br/>
+          {{question.sel}} <br/>
+      </p>
     </tr>
   </tbody>
 </table>

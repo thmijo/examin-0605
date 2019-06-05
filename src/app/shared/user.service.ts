@@ -73,4 +73,20 @@ addUserAttempts(uId:string) {
   //getQuestion(qId: string) {
   //  return this.afs.doc(`questions/${qId}`);
   //}
+
+addUserAttempts2(uId:string, questions : any[]) {
+    const attempt = {
+     // test : "Test attempt 333",
+     // time: new Date(),
+     // dArray :  ['hello','Bolo','Maylo','Julo'],
+     // dMap : { 'Environments' : 'Bro', 'servers':'Sis'} ,
+      attemptDetails :  questions
+    };
+    console.log("adding atempt for "+uId);
+   //this.attemptsCollection = this.afs.collection(`users);
+      return this.attemptsCollection.doc(uId).collection("attempts").add(attempt);
+}
+  //getQuestion(qId: string) {
+  //  return this.afs.doc(`questions/${qId}`);
+  //}
 }

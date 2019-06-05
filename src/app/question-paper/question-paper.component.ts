@@ -21,7 +21,7 @@ previousQuestionIndex : number;
 nextQuestionIndex : number = 1;
 flag : boolean = false;
 
-  constructor(private questionService: QuestionService, userService : UserService, private route: ActivatedRoute) {}
+  constructor(private questionService: QuestionService,private userService : UserService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.examId = this.route.snapshot.params['eId'];
@@ -64,8 +64,10 @@ getQuestion(i:number) {
     console.log ("form submitted"+this.signupForm.value.Option);
     console.log ("form submitted"+this.signupForm.value.one);
     //this.signupForm.reset();
+   
+  // console.log (this.questions);
     
-    //this.userService.addUserAttempts('arHiJ1xEbfjTRJbNnstz');
+    this.userService.addUserAttempts2('arHiJ1xEbfjTRJbNnstz', this.questions);
 
   }
 
