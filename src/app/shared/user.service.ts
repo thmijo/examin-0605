@@ -14,7 +14,7 @@ import { Question } from "./interfaces/question";
 export class UserService {
   userCollection: AngularFirestoreCollection;
   userDocument: AngularFirestoreDocument;
-  attemptsCollection: AngularFirestoreCollection;
+  attemptsCollection: AngularFirestoreCollection = this.afs.collection('users');
   attemptDocument: AngularFirestoreDocument;
 
   constructor(private afs: AngularFirestore) {}
@@ -59,6 +59,15 @@ export class UserService {
     );
   }
 
+addUserAttempts(uId:string) {
+    const attempt = {
+      test : "Test attempt 333",
+      time: new Date()
+    };
+    console.log("adding atempt for "+uId);
+   //this.attemptsCollection = this.afs.collection(`users);
+      return this.attemptsCollection.doc(uId).collection("attempts").add(attempt);
+}
   //getQuestion(qId: string) {
   //  return this.afs.doc(`questions/${qId}`);
   //}

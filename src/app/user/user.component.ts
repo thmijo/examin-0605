@@ -26,4 +26,8 @@ export class UserComponent implements OnInit {
     });
   }
 
+  addAttempt(uId:string) {
+    console.log("Adding attempt for "+uId);
+    this.userSerivce.addUserAttempts(uId);
+  }
 }
