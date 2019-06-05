@@ -14,6 +14,7 @@ currentQuestionId : string;
 currentQuestionIndex : number = 0;
 previousQuestionIndex : number;
 nextQuestionIndex : number = 1;
+flag : boolean = false;
 
   constructor(private questionService: QuestionService, private route: ActivatedRoute) {}
 

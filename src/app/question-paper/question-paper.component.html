@@ -24,9 +24,9 @@ Next Id : {{nextQuestionIndex}} <br/>
   <label class="custom-control-label" for="paypal">{{questions[currentQuestionIndex]['o3']}}</label>
 </div>
 </div>
-
-<button class="btn btn-primary" (click)="getQuestion(previousQuestionIndex)">{{previousQuestionIndex}} -- Prev</button>
-<button class="btn btn-primary" (click)="getQuestion(nextQuestionIndex)">{{nextQuestionIndex}}  Next -- </button>
+<button class="btn btn-primary" *ngIf="!(currentQuestionIndex===0)" (click)="getQuestion(previousQuestionIndex)">Prev</button>
+<button class="btn btn-primary" *ngIf="!(currentQuestionIndex===3)" (click)="getQuestion(nextQuestionIndex)"> Next</button>
+<button class="btn btn-primary" *ngIf="currentQuestionIndex===3" (click)="Submit()">  Submit </button>
 <!--
  <p *ngFor="let question of questions ; let i = index"> 
    <button class="btn btn-primary" (click)="getQuestion(i)"> 
