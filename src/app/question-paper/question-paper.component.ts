@@ -37,11 +37,11 @@ getQuestion(i:number) {
     this.nextQuestionIndex = i+1;
     if (this.nextQuestionIndex > this.questions.length-1)
     this.nextQuestionIndex = null;
-    console.log("printing quetion id"+qId + "questions number"+i);
+   // console.log("printing quetion id"+qId + "questions number"+i);
     console.log(this.questions[this.currentQuestionIndex]);
   }
 
-  getQuestions() {
+ /* getQuestions() {
     console.log("Getting Questions");
     // console.log(this.questionService.getQuestions());
 
@@ -49,7 +49,6 @@ getQuestion(i:number) {
       this.questions = questions;
       console.log(this.questions);
     });
-
-  }
+  } */
 
 }

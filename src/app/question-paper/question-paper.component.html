@@ -2,14 +2,12 @@
  <app-question *ngFor="let question of questions" q="{{question.q}}" o1="{{question.o1}}" o2="{{question.o2}}" o3="{{question.o3}}" qId="{{question.id}}" > 
  </app-question>
  -->
-
-Exam Id : {{examId}}  ---- 
-Question Id : {{questions[currentQuestionIndex]['id']}} ----- 
-Current Question Index : {{currentQuestionIndex}} ---
+<! --
+(Exam/Question Id : {{examId}}/{{questions[currentQuestionIndex]['id']}} ) ---- 
 Previous Id : {{previousQuestionIndex}} ----
-Next Id : {{nextQuestionIndex}} <br/>
-
-<h4 class="mb-3">{{questions[currentQuestionIndex]['q']}}</h4>
+Next Id : {{nextQuestionIndex}} 
+-->
+<h4 class="mb-3">{{currentQuestionIndex+1}}. {{questions[currentQuestionIndex]['q']}} </h4>
 <div class="d-block my-3">
 <div class="custom-control custom-radio">
   <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
