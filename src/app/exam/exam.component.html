@@ -13,12 +13,14 @@
       </a>
     </div>
 -->
-
+<div class="text-center">
   <table class="table">
   <thead>
     <tr>
+      <th scope="col">#</th>
       <th scope="col">Exam Name</th>
       <th scope="col">Exam Desc</th>
+      <th scope="col">Exam ID</th>
       <th scope="col">Link</th>
     </tr>
   </thead>
@@ -26,7 +28,7 @@
     <tr>
       <th scope="row">{{i+1}}</th>
       <td>{{ exam.eName }}</td>
-      <td>{{ exam.eName }}</td>
+      <td>{{ exam.eDesc }}</td>
       <td>{{ exam.id }}</td>
        <td><a routerLink="/exams/{{exam.id}}">
           Start Exam
@@ -34,3 +36,4 @@
     </tr>
   </tbody>
 </table>
+</div>

@@ -4,15 +4,26 @@
  -->
 
 Exam Id : {{examId}}  ---- 
-Question Id : {{currentQuestionId}} ----- 
+Question Id : {{questions[currentQuestionIndex]['id']}} ----- 
 Current Question Index : {{currentQuestionIndex}} ---
 Previous Id : {{previousQuestionIndex}} ----
-
 Next Id : {{nextQuestionIndex}} <br/>
-{{questions[currentQuestionIndex]['q']}} <br/>
-{{questions[currentQuestionIndex]['o1']}} <br/>
-{{questions[currentQuestionIndex]['o2']}} <br/>
-{{questions[currentQuestionIndex]['o3']}} <br/>
+
+<h4 class="mb-3">{{questions[currentQuestionIndex]['q']}}</h4>
+<div class="d-block my-3">
+<div class="custom-control custom-radio">
+  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+  <label class="custom-control-label" for="credit">{{questions[currentQuestionIndex]['o1']}}</label>
+</div>
+<div class="custom-control custom-radio">
+  <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+  <label class="custom-control-label" for="debit"> {{questions[currentQuestionIndex]['o2']}}</label>
+</div>
+<div class="custom-control custom-radio">
+  <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+  <label class="custom-control-label" for="paypal">{{questions[currentQuestionIndex]['o3']}}</label>
+</div>
+</div>
 
 <button class="btn btn-primary" (click)="getQuestion(previousQuestionIndex)">{{previousQuestionIndex}} -- Prev</button>
 <button class="btn btn-primary" (click)="getQuestion(nextQuestionIndex)">{{nextQuestionIndex}}  Next -- </button>
@@ -23,5 +34,8 @@ Next Id : {{nextQuestionIndex}} <br/>
    </button>
  </p>
  -->
+   
+
+
 
 
