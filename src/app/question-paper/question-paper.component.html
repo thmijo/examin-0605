@@ -3,23 +3,25 @@
  </app-question>
  -->
 
-Exam Id : {{examId}} <br/>
-Question Id : {{currentQuestionId}} <br>
-Current Question Index : {{currentQuestionIndex}} <br/>
-Previous Id : {{previousQuestionIndex}} <br/>
-<button class="btn btn-primary" (click)="getQuestion(previousQuestionIndex)">{{previousQuestionIndex}} -- Prev</button>
-<button class="btn btn-primary" (click)="getQuestion(nextQuestionIndex)">{{nextQuestionIndex}}  Next -- </button>
+Exam Id : {{examId}}  ---- 
+Question Id : {{currentQuestionId}} ----- 
+Current Question Index : {{currentQuestionIndex}} ---
+Previous Id : {{previousQuestionIndex}} ----
+
 Next Id : {{nextQuestionIndex}} <br/>
 {{questions[currentQuestionIndex]['q']}} <br/>
 {{questions[currentQuestionIndex]['o1']}} <br/>
 {{questions[currentQuestionIndex]['o2']}} <br/>
 {{questions[currentQuestionIndex]['o3']}} <br/>
 
-
+<button class="btn btn-primary" (click)="getQuestion(previousQuestionIndex)">{{previousQuestionIndex}} -- Prev</button>
+<button class="btn btn-primary" (click)="getQuestion(nextQuestionIndex)">{{nextQuestionIndex}}  Next -- </button>
+<!--
  <p *ngFor="let question of questions ; let i = index"> 
    <button class="btn btn-primary" (click)="getQuestion(i)"> 
    {{question.id}}
    </button>
  </p>
+ -->
 
 

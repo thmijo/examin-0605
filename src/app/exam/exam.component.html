@@ -1,4 +1,4 @@
-  <div class="card mb-4 shadow-sm" *ngFor="let exam of exams">
+<!--  <div class="card mb-4 shadow-sm" *ngFor="let exam of exams">
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">{{ exam.eName }}</h4>
       </div>
@@ -12,3 +12,25 @@
           Link 1
       </a>
     </div>
+-->
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Exam Name</th>
+      <th scope="col">Exam Desc</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let exam of exams; let i = index">
+    <tr>
+      <th scope="row">{{i+1}}</th>
+      <td>{{ exam.eName }}</td>
+      <td>{{ exam.eName }}</td>
+      <td>{{ exam.id }}</td>
+       <td><a routerLink="/exams/{{exam.id}}">
+          Start Exam
+      </a></td>
+    </tr>
+  </tbody>
+</table>
