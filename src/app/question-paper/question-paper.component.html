@@ -7,23 +7,23 @@
 Previous Id : {{previousQuestionIndex}} ----
 Next Id : {{nextQuestionIndex}} 
 -->
-<form>
+<form (ngSubmit)="onSubmit()" #f="ngForm">
 <h4 class="mb-3">{{currentQuestionIndex+1}}. {{questions[currentQuestionIndex]['q']}} </h4>
 <div class="d-block my-3">
 <div class="custom-control custom-radio">
-  <input id="credit" name="Option" type="radio" class="custom-control-input" ngModel checked required>
+  <input id="credit" name="Option" type="radio" class="custom-control-input" value="o1" ngModel required>
   <label class="custom-control-label" for="credit">{{questions[currentQuestionIndex]['o1']}}</label>
 </div>
 <div class="custom-control custom-radio">
-  <input id="debit" name="Option" type="radio" class="custom-control-input" ngModel required>
+  <input id="debit" name="Option" type="radio" class="custom-control-input" value="o2" ngModel required>
   <label class="custom-control-label" for="debit"> {{questions[currentQuestionIndex]['o2']}}</label>
 </div>
 <div class="custom-control custom-radio">
-  <input id="paypal" name="Option" type="radio" class="custom-control-input" ngModel required>
+  <input id="paypal" name="Option" type="radio" class="custom-control-input" value="o3" ngModel required>
   <label class="custom-control-label" for="paypal">{{questions[currentQuestionIndex]['o3']}}</label>
 </div>
 </div>
-<button class="btn btn-primary" *ngIf="!(currentQuestionIndex===0)" (click)="getQuestion(previousQuestionIndex)">Prev</button>
+<button class="btn btn-primary" [disabled]="!f.valid" *ngIf="!(currentQuestionIndex===0)" (click)="getQuestion(previousQuestionIndex)">Prev</button>
 <button class="btn btn-primary" *ngIf="!(currentQuestionIndex===3)" (click)="getQuestion(nextQuestionIndex)"> Next</button>
 <button class="btn btn-success" *ngIf="currentQuestionIndex===3" (click)="Submit()">  Submit </button>
 </form>

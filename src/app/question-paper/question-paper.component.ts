@@ -3,6 +3,7 @@ import { QuestionService } from "../shared/question.service";
 import {ActivatedRoute} from '@angular/router';
 import {Question} from '../shared/interface/question';
 
+
 @Component({
   selector: 'app-question-paper',
   templateUrl: './question-paper.component.html',
@@ -46,5 +47,8 @@ getQuestion(i:number) {
       console.log(this.questions);
     });
   } */
+  onSubmit() {
+    console.log ("form submitted");
+  }
 
 }
