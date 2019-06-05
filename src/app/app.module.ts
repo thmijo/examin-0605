@@ -14,12 +14,13 @@ import { ExamService } from './shared/exam.service';
 import { ExamComponent } from './exam/exam.component';
 import { QuestionComponent } from './question-paper/question/question.component';
 import { UserComponent } from './user/user.component';
+import { UserService } from './shared/user.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AngularFireModule.initializeApp(environment.firebase),
  	AngularFirestoreModule,AppRoutingModule ],
   declarations: [ AppComponent, HelloComponent, QuestionPaperComponent, HeaderComponent, ExamComponent, QuestionComponent, UserComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [QuestionService, ExamService]
+  providers: [QuestionService, ExamService, UserService]
 })
 export class AppModule { }

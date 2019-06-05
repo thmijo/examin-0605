@@ -1,0 +1,8 @@
+<p>
+user works!
+</p>
+ <p *ngFor="let user of users ; let i = index"> 
+   <button class="btn btn-primary"  (click)="getUserAttempts(user.id)"> 
+   {{user.id}}
+   </button>
+ </p>
