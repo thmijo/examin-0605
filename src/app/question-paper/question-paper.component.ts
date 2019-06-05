@@ -11,9 +11,9 @@ export class QuestionPaperComponent implements OnInit {
 questions: any = [];
 examId : string;
 currentQuestionId : string;
-currentQuestionIndex : number;
+currentQuestionIndex : number = 0;
 previousQuestionIndex : number;
-nextQuestionIndex : number;
+nextQuestionIndex : number = 1;
 
   constructor(private questionService: QuestionService, private route: ActivatedRoute) {}
 
@@ -21,8 +21,8 @@ nextQuestionIndex : number;
     this.examId = this.route.snapshot.params['eId'];
     this.questionService.getQuestions(this.examId).subscribe(questions => {
       this.questions = questions;
-      console.log(this.questions);
-      console.log(this.questions.length);
+      //console.log(this.questions);
+      //console.log(this.questions.length);
     });
   }
 
