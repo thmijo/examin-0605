@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from "../shared/question.service";
 import {ActivatedRoute} from '@angular/router';
+import {Question} from '../shared/interface/question';
 
 @Component({
   selector: 'app-question-paper',
@@ -8,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./question-paper.component.css']
 })
 export class QuestionPaperComponent implements OnInit {
-questions: any = [];
+questions: Question = [];
 examId : string;
 currentQuestionId : string;
 currentQuestionIndex : number = 0;
@@ -22,14 +23,10 @@ flag : boolean = false;
     this.examId = this.route.snapshot.params['eId'];
     this.questionService.getQuestions(this.examId).subscribe(questions => {
       this.questions = questions;
-      //console.log(this.questions);
-      //console.log(this.questions.length);
     });
   }
 
 getQuestion(i:number) {
-//getQuestion(qId:string,i:number) {
-  //  this.currentQuestionId = qId;
     this.currentQuestionIndex = i;
     this.previousQuestionIndex = i-1;
     if (this.previousQuestionIndex<0) 
@@ -37,7 +34,6 @@ getQuestion(i:number) {
     this.nextQuestionIndex = i+1;
     if (this.nextQuestionIndex > this.questions.length-1)
     this.nextQuestionIndex = null;
-   // console.log("printing quetion id"+qId + "questions number"+i);
     console.log(this.questions[this.currentQuestionIndex]);
   }
 
