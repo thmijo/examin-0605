@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewChild, OnInit } from '@angular/core';
 import { QuestionService } from "../shared/question.service";
 import {ActivatedRoute} from '@angular/router';
 import {Question} from '../shared/interface/question';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -10,7 +11,8 @@ import {Question} from '../shared/interface/question';
   styleUrls: ['./question-paper.component.css']
 })
 export class QuestionPaperComponent implements OnInit {
-questions: Question = [];
+@ViewChild('f', { static: false }) signupForm : NgForm;  
+questions: any = [];
 examId : string;
 currentQuestionId : string;
 currentQuestionIndex : number = 0;
@@ -27,7 +29,14 @@ flag : boolean = false;
     });
   }
 
+  rbClick(i:number,selectedOption:string) {
+    // console.log ("radio button @@@"+this.signupForm.value.Option);
+    // console.log ("radio button clicked"+selectedOption);
+     this.questions[i].sel = selectedOption;
+  }
+
 getQuestion(i:number) {
+  //console.log ("getttting values submitted"+this.signupForm.value.Option);
     this.currentQuestionIndex = i;
     this.previousQuestionIndex = i-1;
     if (this.previousQuestionIndex<0) 
@@ -35,7 +44,10 @@ getQuestion(i:number) {
     this.nextQuestionIndex = i+1;
     if (this.nextQuestionIndex > this.questions.length-1)
     this.nextQuestionIndex = null;
-    console.log(this.questions[this.currentQuestionIndex]);
+   //  this.signupForm.reset();
+   // this.questions[i-1].sel = "!!!!!!!!!!!!!!!!!!!!!!!!!"+this.signupForm.value.Option;
+    //this.getQuestion.bind("ans3");
+   // console.log(this.questions[this.currentQuestionIndex]);
   }
 
  /* getQuestions() {
@@ -48,7 +60,9 @@ getQuestion(i:number) {
     });
   } */
   onSubmit() {
-    console.log ("form submitted");
+    console.log ("form submitted"+this.signupForm.value.Option);
+    console.log ("form submitted"+this.signupForm.value.one);
+    //this.signupForm.reset();
   }
 
 }
