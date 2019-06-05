@@ -3,6 +3,7 @@ import { QuestionService } from "../shared/question.service";
 import {ActivatedRoute} from '@angular/router';
 import {Question} from '../shared/interface/question';
 import { NgForm } from '@angular/forms';
+import {UserService} from '../shared/user.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ previousQuestionIndex : number;
 nextQuestionIndex : number = 1;
 flag : boolean = false;
 
-  constructor(private questionService: QuestionService, private route: ActivatedRoute) {}
+  constructor(private questionService: QuestionService, userService : UserService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.examId = this.route.snapshot.params['eId'];
@@ -63,6 +64,9 @@ getQuestion(i:number) {
     console.log ("form submitted"+this.signupForm.value.Option);
     console.log ("form submitted"+this.signupForm.value.one);
     //this.signupForm.reset();
+    
+    //this.userService.addUserAttempts('arHiJ1xEbfjTRJbNnstz');
+
   }
 
 
