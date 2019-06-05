@@ -7,14 +7,19 @@ Exam Id : {{examId}} <br/>
 Question Id : {{currentQuestionId}} <br>
 Current Question Index : {{currentQuestionIndex}} <br/>
 Previous Id : {{previousQuestionIndex}} <br/>
+<button class="btn btn-primary" (click)="getQuestion(previousQuestionIndex)">{{previousQuestionIndex}} -- Prev</button>
+<button class="btn btn-primary" (click)="getQuestion(nextQuestionIndex)">{{nextQuestionIndex}}  Next -- </button>
 Next Id : {{nextQuestionIndex}} <br/>
+{{questions[currentQuestionIndex]['q']}} <br/>
+{{questions[currentQuestionIndex]['o1']}} <br/>
+{{questions[currentQuestionIndex]['o2']}} <br/>
+{{questions[currentQuestionIndex]['o3']}} <br/>
 
 
  <p *ngFor="let question of questions ; let i = index"> 
-   <button class="btn btn-primary" (click)="getQuestion(question.id,i)"> 
+   <button class="btn btn-primary" (click)="getQuestion(i)"> 
    {{question.id}}
    </button>
-   <a routerLink="questions/{{question.id}}"> Click </a>
  </p>
 
 

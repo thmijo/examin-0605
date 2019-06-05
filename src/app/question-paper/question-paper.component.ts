@@ -22,14 +22,20 @@ nextQuestionIndex : number;
     this.questionService.getQuestions(this.examId).subscribe(questions => {
       this.questions = questions;
       console.log(this.questions);
+      console.log(this.questions.length);
     });
   }
 
-  getQuestion(qId:string,i:number) {
-    this.currentQuestionId = qId;
+getQuestion(i:number) {
+//getQuestion(qId:string,i:number) {
+  //  this.currentQuestionId = qId;
     this.currentQuestionIndex = i;
     this.previousQuestionIndex = i-1;
+    if (this.previousQuestionIndex<0) 
+       this.previousQuestionIndex = null
     this.nextQuestionIndex = i+1;
+    if (this.nextQuestionIndex > this.questions.length-1)
+    this.nextQuestionIndex = null;
     console.log("printing quetion id"+qId + "questions number"+i);
     console.log(this.questions[this.currentQuestionIndex]);
   }
