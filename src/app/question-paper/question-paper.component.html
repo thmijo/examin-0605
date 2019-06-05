@@ -1,11 +1,20 @@
+ <!--
  <app-question *ngFor="let question of questions" q="{{question.q}}" o1="{{question.o1}}" o2="{{question.o2}}" o3="{{question.o3}}" qId="{{question.id}}" > 
  </app-question>
+ -->
 
-Exam Id : {{examId}}
+Exam Id : {{examId}} <br/>
+Question Id : {{currentQuestionId}} <br>
+Current Question Index : {{currentQuestionIndex}} <br/>
+Previous Id : {{previousQuestionIndex}} <br/>
+Next Id : {{nextQuestionIndex}} <br/>
 
- <p *ngFor="let question of questions"> 
+
+ <p *ngFor="let question of questions ; let i = index"> 
+   <button class="btn btn-primary" (click)="getQuestion(question.id,i)"> 
    {{question.id}}
+   </button>
    <a routerLink="questions/{{question.id}}"> Click </a>
-   </p>
+ </p>
 
 

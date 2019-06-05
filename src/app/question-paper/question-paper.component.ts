@@ -10,6 +10,11 @@ import {ActivatedRoute} from '@angular/router';
 export class QuestionPaperComponent implements OnInit {
 questions: any = [];
 examId : string;
+currentQuestionId : string;
+currentQuestionIndex : number;
+previousQuestionIndex : number;
+nextQuestionIndex : number;
+
   constructor(private questionService: QuestionService, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -20,6 +25,15 @@ examId : string;
     });
   }
 
+  getQuestion(qId:string,i:number) {
+    this.currentQuestionId = qId;
+    this.currentQuestionIndex = i;
+    this.previousQuestionIndex = i-1;
+    this.nextQuestionIndex = i+1;
+    console.log("printing quetion id"+qId + "questions number"+i);
+    console.log(this.questions[this.currentQuestionIndex]);
+  }
+
   getQuestions() {
     console.log("Getting Questions");
     // console.log(this.questionService.getQuestions());
@@ -28,6 +42,7 @@ examId : string;
       this.questions = questions;
       console.log(this.questions);
     });
+
   }
 
 }
